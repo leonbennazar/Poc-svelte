@@ -1,6 +1,8 @@
 <script>
   let tab = $state("Storyline");  //dandole este valor inicial, siempre vamos a ir a la pagina storyline al recargar
   const paginas = ["Storyline", "Titans"];  //lista
+
+  import Progressbar from '$lib/components/progressbar.svelte'
 </script>
 
 <nav class="navbar">
@@ -15,7 +17,7 @@
 
 <div class="content">
   {#if tab === "Storyline"}
-  <h1>componenteBarra</h1>
+  <Progressbar></Progressbar>
   {:else if tab === "Titans"}
     <h1>componenteTitanes</h1>
   {/if}
