@@ -23,13 +23,18 @@
   {/if}
 </div>
 
+<div class= "header">
+  <h1>Attack on Titan</h1>
+</div>
+
+
 <style>
 .navbar{
   position: fixed;
   display: flex;
   gap: 0px;
   background: #353535;
-  top:0;
+  top:50px;
   left: 0;
   width: 100%;
 }
@@ -43,9 +48,20 @@
   cursor: pointer;         /* convierte el mouse en una manito */
   transition: background 0.3s;
 }
-
+.header{
+  position:fixed;
+  display: flex;
+  color: white; 
+  justify-content: center;
+  background-color: #353535;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  font:bolder;
+}
 .content {
-  margin-top: 50px; /**Hace que no quede arrbiba del todo el div*/
+  margin-top:100px; /**Hace que no quede arrbiba del todo el div*/
 }
 
 .navbar button:hover{
