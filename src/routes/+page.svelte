@@ -1,80 +1,58 @@
-<script lang="ts">
-  import { onMount } from 'svelte';
-
-  let activeTab = 'News';
-
-  const tabs = [
-    { name: 'Home', color: 'red', content: 'Home is where the heart is..' },
-    { name: 'News', color: 'green', content: 'Some news this fine day!' },
-    { name: 'Contact', color: 'blue', content: 'Get in touch, or swing by for a cup of coffee.' },
-    { name: 'About', color: 'orange', content: 'Who we are and what we do.' }
-  ];
-
-  function openPage(tabName: string) {
-    activeTab = tabName;
-  }
-
-  onMount(() => {
-    activeTab = 'News';
-  });
+<script>
+  let tab = $state("Storyline");  //dandole este valor inicial, siempre vamos a ir a la pagina storyline al recargar
+  const paginas = ["Storyline", "Titans"];  //lista
 </script>
 
-<style>
-* {box-sizing: border-box}
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial;
-}
-.tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
-}
-.tablink:hover {
-  background-color: #777;
-}
-.tabcontent {
-  color: white;
-  display: none;
-  padding: 100px 20px;
-  height: 100%;
-}
-.tabcontent.active {
-  display: block;
-}
-#Home {background-color: red;}
-#News {background-color: green;}
-#Contact {background-color: blue;}
-#About {background-color: orange;}
-</style>
-
-<div>
-  {#each tabs as tab}
+<nav class="navbar">
+  {#each paginas as p} <!--recorre el array paginas y genera un boton por cada elemento.-->
     <button
-      class="tablink"
-      style="background-color: {activeTab === tab.name ? tab.color : ''}"
-      on:click={() => openPage(tab.name)}
-      id={tab.name === 'News' ? 'defaultOpen' : undefined}
-    >
-      {tab.name}
-    </button>
+      class:p-active={tab === p}  
+      onclick={() => tab = p}> <!--aplica la clase p-active solo si el botón corresponde al estado actual-->
+      {p} <!--Este es el texto del boton, osea la varialbe p actual-->
+    </button>  
   {/each}
+</nav>
+
+<div class="content">
+  {#if tab === "Storyline"}
+  <h1>componenteBarra</h1>
+  {:else if tab === "Titans"}
+    <h1>componenteTitanes</h1>
+  {/if}
 </div>
 
-{#each tabs as tab}
-  <div
-    id={tab.name}
-    class="tabcontent {activeTab === tab.name ? 'active' : ''}"
-    style="background-color: {tab.color};"
-  >
-    <h3>{tab.name}</h3>
-    <p>{tab.content}</p>
-  </div>
-{/each}
+<style>
+.navbar{
+  position: fixed;
+  display: flex;
+  gap: 0px;
+  background: #353535;
+  top:0;
+  left: 0;
+  width: 100%;
+}
+
+.navbar button{
+  font-size: 20px;        
+  padding: 10px;   
+  border: none;           
+  background-color: #353535;
+  color: white;            
+  cursor: pointer;         /* convierte el mouse en una manito */
+  transition: background 0.3s;
+}
+
+.content {
+  margin-top: 50px; /**Hace que no quede arrbiba del todo el div*/
+}
+
+.navbar button:hover{
+  background-color: #242424;
+
+}
+
+.navbar button.p-active {
+  background-color: #242424;
+}
+
+</style>
