@@ -1,5 +1,5 @@
 <script>
-  let tab = "Storyline";  //dandole este valor inicial, siempre vamos a ir a la pagina storyline al recargar
+  let tab = $state("Storyline");  //dandole este valor inicial, siempre vamos a ir a la pagina storyline al recargar
   const paginas = ["Storyline", "Titans"];  //lista
 </script>
 
