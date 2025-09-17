@@ -26,6 +26,7 @@
 
 <div class= "header">
   <h1>Attack on Titan</h1>
+ <!--<p>Poc Svelte - Progress bar & character info</p>-->
 </div>
 
 

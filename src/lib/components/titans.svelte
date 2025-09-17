@@ -16,13 +16,45 @@
 
 <div class="titanes">
 {#each data as titan}
-  <h1>{titan.name} {titan.img}</h1>
-  <img src= '/titans/{titan.id}.png' alt={titan.name}>
+  <div class ="titan-card">
+  <img src= '/titans/{titan.id}.png' alt={titan.name}/>
+    <div class= "descripcion">
+    <p>{titan.name}</p>
+    </div>
+  </div>
+
 {/each}
 </div>
 
 <style>
+.titanes{
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(200px, 10px));
+  grid-column-gap: 50px;
+  grid-row-gap: 60px;
+  padding: 40px;
+}
 .titanes img{
-  width: 500px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.titan-card{
+  transition: transform 0.2s ease;
+}
+.descripcion{
+  color:white;
+  padding: 5px;
+  transform: translateY(-15px);
+  background-color: #353535;
+  border-radius: 5px;
+
+
+}
+
+.titan-card:hover{
+  transform: translateY(-8px);
+  cursor:pointer;
 }
 </style>
