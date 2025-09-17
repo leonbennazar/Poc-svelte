@@ -3,6 +3,7 @@
   const paginas = ["Storyline", "Titans"];  //lista
 
   import Progressbar from '$lib/components/progressbar.svelte'
+	import Titans from '$lib/components/titans.svelte';
 </script>
 
 <nav class="navbar">
@@ -19,7 +20,7 @@
   {#if tab === "Storyline"}
   <Progressbar></Progressbar>
   {:else if tab === "Titans"}
-    <h1>componenteTitanes</h1>
+    <Titans></Titans>
   {/if}
 </div>
 
