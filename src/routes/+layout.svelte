@@ -7,6 +7,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<title>Attack on Titan</title>
 </svelte:head>
 
 {@render children?.()}

@@ -1,5 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import {goto} from '$app/navigation';
+  let mostrar: any= 0
   let data: any[] = [];  //en typescript: data va a ser un array de cualquier tipo
 
   async function getTitans() {
@@ -14,17 +16,34 @@
   });
 </script>
 
-<div class="titanes">
+<div class="titanes"> 
 {#each data as titan}
+<button class="accionTitan" on:click={() => mostrar = titan.id}>
   <div class ="titan-card">
-  <img src= '/titans/{titan.id}.png' alt={titan.name}/>
-    <div class= "descripcion">
-    <p>{titan.name}</p>
+    <img src= '/titans/{titan.id}.png' alt={titan.name}/>
+      <div class= "descripcion">
+      <p>{titan.name}</p>
     </div>
   </div>
-
+</button>
 {/each}
 </div>
+
+{#each data as titan}    <!--Esto detecta que titan se tocó, para mostrar el popup-->
+{#if mostrar === titan.id}
+  <div class="overlay">
+    <div class="popup" >
+      <img src='/titans/{titan.id}.png' alt={titan.name} />
+      <h1>{titan.name}</h1>
+      <p>● Habilities:{titan.abilities}<br>
+      ● Height: {titan.height}<br>
+      ● Loyal to {titan.allegiance}</p>
+      <button on:click={() => mostrar = 0}>Close</button>
+    </div>
+  </div>
+{/if}
+{/each}
+
 
 <style>
 .titanes{
@@ -40,16 +59,23 @@
   border-radius: 10px;
 }
 
+.titanes button{
+  background: none;
+  border: none;
+}
+
 .titan-card{
   transition: transform 0.2s ease;
 }
 .descripcion{
   color:white;
   padding: 5px;
+  width: 190px;
   transform: translateY(-15px);
   background-color: #353535;
   border-radius: 5px;
-
+  border-top-left-radius: 0px ;
+  border-top-right-radius:0px;
 
 }
 
@@ -57,4 +83,40 @@
   transform: translateY(-8px);
   cursor:pointer;
 }
+  .overlay { /*El fondo del popup y ademas lo que lo centra*/
+    position:fixed;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: #111111b4
+  }
+
+  .popup {
+    background: #353535;
+    color: #fff;  
+    border-radius: 15px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 0 10px #000;
+  }
+  .popup img{
+    width:300;
+    height:300px;
+  }
+  .popup h1{
+    margin-bottom: -20px;
+  }
+ .popup p{ 
+  margin-bottom: -5px;
+  text-align:left;
+  padding: 15px;
+  color:#cfcfcf;
+ }
+ .popup button{
+  margin-bottom: 10px;
+ }
 </style>
