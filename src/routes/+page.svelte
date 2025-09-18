@@ -1,10 +1,30 @@
 <script>
-  let tab = $state("Storyline");  //dandole este valor inicial, siempre vamos a ir a la pagina storyline al recargar
-  const paginas = ["Storyline", "Titans"];  //lista
+  let tab = $state("Home");  //dandole este valor inicial, siempre vamos a ir a la pagina storyline al recargar
+  const paginas = ["Home", "Storyline", "Titans"];  //lista
 
   import Progressbar from '$lib/components/progressbar.svelte'
 	import Titans from '$lib/components/titans.svelte';
+  import Home from '$lib/components/home.svelte'
 </script>
+
+
+<div class="content">
+  {#if tab === "Home"}
+  <Home></Home>
+  {:else if tab === "Storyline"}
+  <Progressbar></Progressbar>
+  {:else if tab === "Titans"}
+    <Titans></Titans>
+  {/if}
+</div>
+
+
+<div class= "header">
+  <h1>Attack on Titan</h1>
+ <!--<p>Poc Svelte - Progress bar & character info</p>-->
+</div>
+
+
 
 <nav class="navbar">
   {#each paginas as p} <!--recorre el array paginas y genera un boton por cada elemento.-->
@@ -16,25 +36,12 @@
   {/each}
 </nav>
 
-<div class="content">
-  {#if tab === "Storyline"}
-  <Progressbar></Progressbar>
-  {:else if tab === "Titans"}
-    <Titans></Titans>
-  {/if}
-</div>
-
-<div class= "header">
-  <h1>Attack on Titan</h1>
- <!--<p>Poc Svelte - Progress bar & character info</p>-->
-</div>
 
 
 <style>
 .navbar{
   position: fixed;
   display: flex;
-  gap: 0px;
   background: #353535;
   top:50px;
   left: 0;
