@@ -102,6 +102,9 @@ let completas = $state(0);
 
   .checkboxes img{
     height: 80px;
+    cursor:pointer;
 
   }
+
+
 </style>

@@ -16,33 +16,37 @@
   });
 </script>
 
-<div class="titanes"> 
-{#each data as titan}
-<button class="accionTitan" on:click={() => mostrar = titan.id}>
-  <div class ="titan-card">
-    <img src= '/titans/{titan.id}.png' alt={titan.name}/>
-      <div class= "descripcion">
-      <p>{titan.name}</p>
-    </div>
-  </div>
-</button>
-{/each}
-</div>
 
-{#each data as titan}    <!--Esto detecta que titan se tocó, para mostrar el popup-->
-{#if mostrar === titan.id}
-  <div class="overlay">
-    <div class="popup" >
-      <h1>{titan.name}</h1>
-      <img src='/titans/{titan.id}.png' alt={titan.name} />
-      <p>● Habilities:{titan.abilities}<br>
-      ● Height: {titan.height}<br>
-      ● Loyal to {titan.allegiance}</p>
-      <button on:click={() => mostrar = 0}>Close</button>
+
+  <div class="titanes"> 
+  {#each data as titan}
+  <button class="accionTitan" on:click={() => mostrar = titan.id}>
+    <div class ="titan-card">
+      <img src= '/titans/{titan.id}.png' alt={titan.name}/>
+        <div class= "descripcion">
+        <p>{titan.name}</p>
+      </div>
     </div>
+  </button>
+  {/each}
   </div>
-{/if}
-{/each}
+
+  {#each data as titan}    <!--Esto detecta que titan se tocó, para mostrar el popup-->
+  {#if mostrar === titan.id}
+    <div class="overlay">
+      <div class="popup" >
+        <h1>{titan.name}</h1>
+      <img src='/titans/{titan.id}.png' alt={titan.name} />
+        <p>● Habilities:{titan.abilities}<br>
+        ● Height: {titan.height}<br>
+        ● Loyal to {titan.allegiance}</p>
+        <button on:click={() => mostrar = 0}>Close</button>
+      </div>
+    </div>
+  {/if}
+  {/each}
+
+
 
 
 <style>
@@ -51,7 +55,7 @@
   grid-template-columns: repeat(auto-fill,minmax(200px, 10px));
   grid-column-gap: 50px;
   grid-row-gap: 60px;
-  padding: 40px;
+  padding: 100px;
 }
 .titanes img{
   width: 200px;
@@ -121,4 +125,6 @@
   margin-bottom: 10px;
   cursor:pointer;
  }
+
+
 </style>
