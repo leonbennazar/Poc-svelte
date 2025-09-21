@@ -33,8 +33,8 @@
 {#if mostrar === titan.id}
   <div class="overlay">
     <div class="popup" >
-      <img src='/titans/{titan.id}.png' alt={titan.name} />
       <h1>{titan.name}</h1>
+      <img src='/titans/{titan.id}.png' alt={titan.name} />
       <p>● Habilities:{titan.abilities}<br>
       ● Height: {titan.height}<br>
       ● Loyal to {titan.allegiance}</p>
@@ -104,6 +104,7 @@
     box-shadow: 0 0 10px #000;
   }
   .popup img{
+    margin-top: 40px;
     width:300;
     height:300px;
   }
