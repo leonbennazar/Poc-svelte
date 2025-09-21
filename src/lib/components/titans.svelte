@@ -65,14 +65,14 @@
 }
 
 .titan-card{
-  transition: transform 0.2s ease;
+  transition: 0.2s ease;
 }
 .descripcion{
   color:white;
   padding: 5px;
   width: 190px;
   transform: translateY(-15px);
-  background-color: #353535;
+  background-color: #d32f2f;
   border-radius: 5px;
   border-top-left-radius: 0px ;
   border-top-right-radius:0px;
@@ -96,7 +96,7 @@
   }
 
   .popup {
-    background: #353535;
+    background: #d32f2f;
     color: #fff;  
     border-radius: 15px;
     width: 500px;
@@ -119,5 +119,6 @@
  }
  .popup button{
   margin-bottom: 10px;
+  cursor:pointer;
  }
 </style>

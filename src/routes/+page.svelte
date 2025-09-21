@@ -20,7 +20,7 @@
 
 
 <div class= "header">
-  <h1>Attack on Titan</h1>
+  <h1>Attack on Svelte</h1>
  <!--<p>Poc Svelte - Progress bar & character info</p>-->
 </div>
 
@@ -42,7 +42,7 @@
 .navbar{
   position: fixed;
   display: flex;
-  background: #353535;
+  background: #e53935;
   top:50px;
   left: 0;
   width: 100%;
@@ -52,9 +52,8 @@
   font-size: 20px;        
   padding: 10px;   
   border: none;           
-  background-color: #353535;
-  color: white;            
-  cursor: pointer;         /* convierte el mouse en una manito */
+  background-color: #e53935;
+  color: white;                  
   transition: background 0.3s;
 }
 .header{
@@ -62,7 +61,7 @@
   display: flex;
   color: white; 
   justify-content: center;
-  background-color: #353535;
+  background-color: #e53935;
   top: 0;
   left: 0;
   height: 50px;
@@ -74,12 +73,13 @@
 }
 
 .navbar button:hover{
-  background-color: #242424;
+  background-color: #b71c1c;
+    cursor: pointer; 
 
 }
 
 .navbar button.p-active {
-  background-color: #242424;
+  background-color: #b71c1c;
 }
 
 </style>
