@@ -100,12 +100,13 @@
   }
 
   .popup {
-    background: #d32f2f;
+    background: #3f0101;
     color: #fff;  
     border-radius: 15px;
     width: 500px;
     text-align: center;
     box-shadow: 0 0 10px #000;
+    font-weight:bold;
   }
   .popup img{
     margin-top: 40px;

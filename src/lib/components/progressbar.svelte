@@ -3,22 +3,18 @@
 let progreso = $state(0);
 let events: any[] = [
   {checked : false, img:'/shing-attack.webp'},
+  {checked : false, img: '/titan-mama-eren.jpg'},
+  {checked : false, img: '/eren-tropas.jpg'},
+  {checked : false, img: '/eren-chico.jpg'},
+  {checked : false, img: '/eren-cubre-muro.jpg'},
+  {checked : false, img: '/titan-hembra.jpg'},
   {checked : false, img: '/traitors.png'},
-  {checked : false, img: '/eren.png'},
-  {checked : false, img: '/eren.png'},
-  {checked : false, img: '/eren.png'},
-  {checked : false, img: '/eren.png'},
-  {checked : false, img: '/eren.png'},
-  {checked : false, img: '/eren.png'},
-  {checked : false, img: '/eren.png'},
-  {checked : false, img: '/eren.png'},
-  {checked : false, img: '/eren.png'},
-  {checked : false, img: '/eren.png'},
-  {checked : false, img: '/eren.png'},
-  {checked : false, img: '/eren.png'},
-  {checked : false, img: '/eren.png'},
-  {checked : false, img: '/eren.png'},
-  {checked : false, img: '/eren.png'},
+  {checked : false, img: '/erwin.jpg'},
+  {checked : false, img: '/eren-mikasa-armin.jpg'},
+  {checked : false, img: '/grisha.jpg'},
+  {checked : false, img: '/eren-historia.jpg'},
+  {checked : false, img: '/eren-grande.jpg'},
+  {checked : false, img: '/ult-foto.jpg'},
 ]
   
 let completas = $state(0);
