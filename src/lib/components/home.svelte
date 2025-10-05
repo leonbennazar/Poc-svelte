@@ -65,7 +65,7 @@
   h1:hover{
     color: #d50000;
     transition: 1s ease;
-    cursor: pointer;
+    cursor: default;
   }
 
 /* modificaciones*/
