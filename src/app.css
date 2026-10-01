@@ -1,0 +1,63 @@
+/* Estilos globales: tipografia, fondo y tokens de color (tema Attack on Titan) */
+
+:root {
+	--red: #e53935;
+	--red-dark: #b71c1c;
+	--red-deep: #7f0000;
+	--ink: #0d0d10;
+	--panel: rgba(18, 18, 22, 0.82);
+	--panel-solid: #16161a;
+	--line: rgba(255, 255, 255, 0.12);
+	--text: #f5f5f7;
+	--text-dim: #c9c9d1;
+	--font-body: 'Segoe UI', 'Helvetica Neue', Arial, system-ui, sans-serif;
+	--font-display: 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif;
+	color-scheme: dark;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	font-family: var(--font-body);
+	color: var(--text);
+	background:
+		linear-gradient(rgba(8, 8, 12, 0.72), rgba(8, 8, 12, 0.86)),
+		url('/fondo-attack-on-titan.jpg') no-repeat center center fixed;
+	background-size: cover;
+	background-attachment: fixed;
+	-webkit-font-smoothing: antialiased;
+}
+
+::selection {
+	background: var(--red);
+	color: #fff;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #101014;
+}
+
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(var(--red), var(--red-dark));
+	border-radius: 10px;
+	border: 2px solid #101014;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--red-dark);
+}
+
+button,
+input {
+	font-family: inherit;
+}
